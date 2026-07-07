@@ -1,46 +1,56 @@
-# 👨‍💼 HR Analytics ETL Pipeline & Interactive Dashboard
+# 👨‍💼 HR Analytics ETL Pipeline & Power BI Dashboard
 
 ## 📌 Project Overview
 
-This project demonstrates an end-to-end HR Analytics ETL pipeline using **Python, PostgreSQL, SQL, and Power BI**. The goal is to clean HR employee data, load it into a PostgreSQL database, perform business analysis using SQL, and create an interactive Power BI dashboard for HR insights.
+This project demonstrates a complete **HR Analytics ETL Pipeline** using **Python, PostgreSQL, SQL, and Power BI**.
 
-This project follows a real-world ETL workflow commonly used in data analytics.
+The objective is to clean HR employee data, load it into a PostgreSQL database, perform SQL-based analysis, and create an interactive Power BI dashboard to gain insights into employee attrition, salaries, departments, job satisfaction, overtime, and workforce demographics.
 
 ---
 
-## 🚀 Technologies Used
+## 🛠️ Technologies Used
 
-- 🐍 Python (Pandas)
+- 🐍 Python
+- 📊 Pandas
 - 🐘 PostgreSQL
 - 📝 SQL
-- 📊 Power BI
+- 📈 Power BI
 - 🌐 Git & GitHub
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 
-```text
-HR-Analytics-ETL/
+```
+HR-Analytics-ETL
 │
-├── dataset/
+├── dataset
 │   ├── WA_Fn-UseC_-HR-Employee-Attrition.csv
 │   └── hr_clean.csv
 │
-├── python/
+├── python
 │   └── data_cleaning.py
 │
-├── sql/
+├── sql
 │   ├── 01_create_table.sql
 │   ├── 02_load_data.sql
 │   ├── 03_data_cleaning.sql
 │   └── 04_analysis.sql
 │
-├── powerbi/
+├── powerbi
 │   └── HR_Analytics_Dashboard.pbix
 │
-├── screenshots/
-│   └── dashboard.png
+├── screenshots
+│   ├── dashboardHR.png
+│   ├── attrition_count.png
+│   ├── average_age.png
+│   ├── average_salary.png
+│   ├── department_analysis.png
+│   ├── gender_distribution.png
+│   ├── highest_paid_employees.png
+│   ├── job_satisfaction.png
+│   ├── overtime_analysis.png
+│   └── years_at_company.png
 │
 └── README.md
 ```
@@ -55,19 +65,22 @@ Raw HR Dataset (CSV)
           ▼
 Python (Pandas)
 • Data Cleaning
-• Data Validation
+• Missing Value Check
+• Duplicate Check
+• Column Validation
 • Export Clean Dataset
           │
           ▼
 PostgreSQL
-• Create Database
-• Load Clean Data
+• Create Table
+• Import Clean Dataset
+• Verify Data
           │
           ▼
 SQL Analysis
 • Employee Analysis
-• Attrition Analysis
 • Salary Analysis
+• Attrition Analysis
 • Department Analysis
           │
           ▼
@@ -79,120 +92,165 @@ Power BI Dashboard
 
 ---
 
-# 🐍 Python Tasks
+# 🐍 Python Data Cleaning
 
-- Read CSV dataset
-- Check dataset structure
-- Identify missing values
-- Check duplicate records
-- Rename columns
-- Export cleaned dataset (`hr_clean.csv`)
+Performed the following preprocessing steps:
+
+- Loaded HR Employee Attrition dataset
+- Checked dataset dimensions
+- Verified column names and data types
+- Checked missing values
+- Checked duplicate records
+- Exported cleaned dataset as **hr_clean.csv**
 
 ---
 
-# 🗄 PostgreSQL Tasks
+# 🗄️ PostgreSQL
 
-- Create HR database
-- Create HR table
-- Import cleaned dataset
-- Verify imported records
+The cleaned dataset was imported into PostgreSQL using SQL.
+
+### SQL Files
+
+- **01_create_table.sql** – Creates the HR table
+- **02_load_data.sql** – Imports cleaned CSV
+- **03_data_cleaning.sql** – Data validation queries
+- **04_analysis.sql** – Business analysis queries
 
 ---
 
 # 📊 SQL Analysis
 
-The project includes SQL queries for:
+Performed analysis on:
 
 - Total Employees
 - Attrition Count
 - Attrition Rate
-- Department-wise Employees
-- Gender Distribution
-- Average Salary by Department
+- Employees by Department
 - Average Salary by Job Role
+- Highest Paid Employees
 - Overtime Analysis
-- Job Satisfaction Analysis
+- Job Satisfaction Levels
+- Gender Distribution
 - Average Years at Company
 
 ---
 
 # 📈 Power BI Dashboard
 
-The dashboard includes:
+## KPI Cards
 
-### KPI Cards
+- 👥 Total Employees
+- 📉 Attrition Count
+- 📊 Attrition Rate
+- 💰 Average Salary
+- 🎂 Average Age
 
-- Total Employees
-- Attrition Count
-- Attrition Rate
-- Average Salary
-- Average Age
-
-### Visualizations
+## Visualizations
 
 - Employees by Department
 - Attrition by Department
-- Attrition by Gender
 - Average Salary by Job Role
 - Employees Working Overtime
 - Employees by Education Field
+- Attrition by Gender
+- Job Satisfaction Levels
 - Employee Age Distribution
-- Job Satisfaction Analysis
 
-### Interactive Slicers
+## Interactive Filters
 
-- Department
-- Gender
 - Job Role
+- Gender
+- Department
 
 ---
 
 # 📷 Dashboard Preview
 
-> Add your dashboard screenshot here.
+## Complete Dashboard
 
-Example:
-
-```
-screenshots/dashboard.png
-```
+![Dashboard](screenshots/dashboardHR.png)
 
 ---
 
-# 💡 Key Business Insights
+## Individual Visualizations
 
-- Identified overall employee attrition rate.
-- Analyzed employee distribution across departments.
-- Compared average salaries across job roles.
-- Evaluated overtime patterns.
-- Studied employee age distribution.
-- Examined education field distribution.
-- Analyzed job satisfaction levels.
+### Attrition Count
+
+![Attrition Count](screenshots/attrition_count.png)
+
+### Average Salary
+
+![Average Salary](screenshots/average_salary.png)
+
+### Average Age
+
+![Average Age](screenshots/average_age.png)
+
+### Employees by Department
+
+![Department Analysis](screenshots/department_analysis.png)
+
+### Gender Distribution
+
+![Gender Distribution](screenshots/gender_distribution.png)
+
+### Highest Paid Employees
+
+![Highest Paid Employees](screenshots/highest_paid_employees.png)
+
+### Job Satisfaction
+
+![Job Satisfaction](screenshots/job_satisfaction.png)
+
+### Overtime Analysis
+
+![Overtime Analysis](screenshots/overtime_analysis.png)
+
+### Years at Company
+
+![Years at Company](screenshots/years_at_company.png)
 
 ---
 
-# ▶️ How to Run the Project
+# 💡 Key Insights
 
-1. Clone this repository.
+- Overall Attrition Rate: **16.12%**
+- Total Employees: **1470**
+- Average Salary: **6.50K**
+- Average Employee Age: **36.92 Years**
+- Research & Development department has the highest number of employees.
+- Manager role has the highest average salary.
+- Most employees do not work overtime.
+- Job Satisfaction Level 4 has the highest employee count.
+
+---
+
+# ▶️ How to Run
+
+1. Clone the repository.
 2. Install Python dependencies.
-3. Run `data_cleaning.py`.
-4. Import `hr_clean.csv` into PostgreSQL.
-5. Execute SQL scripts.
-6. Open `HR_Analytics_Dashboard.pbix` in Power BI Desktop.
+3. Run `python/data_cleaning.py`.
+4. Import `dataset/hr_clean.csv` into PostgreSQL.
+5. Execute SQL scripts in order:
+   - `01_create_table.sql`
+   - `02_load_data.sql`
+   - `03_data_cleaning.sql`
+   - `04_analysis.sql`
+6. Open `powerbi/HR_Analytics_Dashboard.pbix` in Power BI Desktop.
 
 ---
 
-# 📚 Skills Demonstrated
+# 🎯 Skills Demonstrated
 
 - Data Cleaning
 - ETL Pipeline
-- Data Validation
 - PostgreSQL
-- SQL Analysis
-- Power BI Dashboard Development
-- Business Intelligence
+- SQL
+- Power BI
 - Data Visualization
-- GitHub Project Management
+- Dashboard Development
+- Business Intelligence
+- Git & GitHub
 
 ---
 
@@ -200,8 +258,10 @@ screenshots/dashboard.png
 
 **Kousalya Vallamkonda**
 
-B.Tech Computer Science (AI & ML)
+B.Tech Computer Science & Engineering (AI & ML)
+
+GitHub: https://github.com/Kousalya2006
 
 ---
 
-⭐ If you found this project useful, consider giving it a star.
+⭐ If you found this project useful, consider giving it a star!
